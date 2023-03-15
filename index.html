@@ -1,0 +1,1348 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Z-Wave.Me Wall-mounted Multisensor</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--      <link rel="stylesheet" href="css/zniffer.css">-->
+      <script src="js/index.js" defer></script>
+      <link rel="stylesheet" href="css/style.css">
+<!--      <script src="js/zniffer.js" defer></script>-->
+   </head>
+   <body>
+      <aside class="side-menu open">
+         <nav>
+            <div class="side-menu-header">
+               <div class="close" onclick="toggleMenu()"></div>
+            </div>
+            <div>
+               <img src="pics/Z-Wave-Me.png" alt="">
+            </div>
+            <h3>Wall-mounted Multisensor Manual</h3>
+            <ul class="ChildLinks">
+               <li><a href="#ProductDescription">Product description</a></li>
+               <li><a href="#WhatIsZ-Wave">What is Z-Wave™ and Long Range?</a></li>
+               <li><a href="#Connection">Connection</a></li>
+               <li><a href="#WallMounting">Wall mounting</a></li>
+               <li><a href="#IncludeExclude">Z-Wave Include (Add) / Exclude (Remove) process</a>
+                  <ul>
+                     <li><a href="#AddingByZ-WaveButton">Adding by Z-Wave button press</a></li>
+                     <li><a href="#AddingUsingSmartStart">Adding using SmartStart</a></li>
+                  </ul>
+               </li>
+               <li><a href="#CommunicationInterfaces">RS-485 or Z-Wave communication interfaces</a></li>
+               <li><a href="#Using">Usage in Z-Wave network</a>
+                  <ul>
+                     <li><a href="#MotionSensor">Motion sensor</a></li>
+                     <li><a href="#TemperatureSensor">Temperature sensor</a></li>
+                     <li><a href="#HumiditySensor">Humidity sensor</a></li>
+                     <li><a href="#LuminanceSensor">Luminance sensor</a></li>
+                     <li><a href="#CO2AndVOCSensors">CO2 and VOC sensors</a></li>
+                     <li><a href="#CO2AutoCalibration">Auto-calibration of the CO2 sensor</a></li>
+                     <li><a href="#SafeLevelsOfCO2">Safe levels of CO2</a></li>
+                     <li><a href="#NoiseSensor">Noise sensor</a></li>
+                     <li><a href="#IntrusionDetection">Intrusion detection</a></li>
+                     <li><a href="#Hysteresis">Hysteresis</a></li>
+                  </ul>
+               </li>
+               <li><a href="#Associations">Associations</a></li>
+               <li><a href="#Configurations">Configuration Parameters</a></li>
+               <li><a href="#FactoryReset">Factory Reset</a></li>
+               <li><a href="#LEDs">LEDs</a></li>
+               <li><a href="#BuzzerControl">Buzzer control</a></li>
+               <li><a href="#NotificationCC">Notification Command Class</a></li>
+               <li><a href="#SensorMultilevelCC">Sensor Multilevel Command Class</a></li>
+               <li><a href="#SecurityCC">Security</a></li>
+               <li><a href="#TechnicalSpecifications">Technical specifications</a></li>
+            </ul>
+         </nav>
+      </aside>
+      <header>
+         <div class="wrapper">
+
+            <div class="content">
+               <div class="menu">
+                  <div class="hide-when-open hamburger" onclick="toggleMenu()"><div></div></div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="wrapper wrapper-helper">
+         <div class="content">
+
+            <h1 id="ProductDescription">Product description</h1>
+            <p>ZME_WB-MSW</p>
+            <p>WB-MSW-ZWAVE</p>
+            <p>Version 1.0</p>
+            <center><img src="pics/WB-MSW3-front.JPG" width="30%"></center>
+            <p>Z-Wave.Me Wall-mounted Multisensor it’s a Z-Wave Plus™ and RS-485 operating multisensor that contains temperature, humidity, light, motion, noise level, CO2 concentration and volatile organic compounds (VOC) sensors. Built-in IR transceiver is designed to control the TV/AV and air conditioning.</p>
+            <p>The multisensor case is made of plastic and is not waterproof, designed for use in homes and offices. For wall mounting.</p>
+            <p>Supports operation via the Z-Wave radio protocol or via the two-wire RS-485 bus with Modbus RTU commands.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <th><p align="center">Measured value</p></th>
+                     <th><p align="center">Range</p></th>
+                     <th><p align="center">Error rate</p></the>
+                     <th><p align="center">Ready to work after power done</p></th>
+                  </tr>
+                  <tr>
+                     <td><p>Concentration CO<sub>2</sub></p></td>
+                     <td><p>400 &ndash; 5000 ppm (parts per million)</p></td>
+                     <td><p>100 ppm + 5% from the measured value</p></td>
+                     <td><p>3 min, auto-calibration every 7 days</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Temperature</p></td>
+                     <td><p>&minus;40 &deg;С &ndash; +80 &deg;С</p></td>
+                     <td><p>&plusmn;0.3 &deg;С (in range 0 &ndash; 70 &deg;C)</p>
+                        <p>&plusmn;0.5 &deg;С (in range&minus;40 &ndash; 0 &deg;C и 70 &ndash; 80 &deg;C)</p></td>
+                     <td><p>1 sec, time constant (balancing with ambient air) ~4 min</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Humidity</p></td>
+                     <td><p>5 &ndash; 95 %</p></td>
+                     <td><p>&plusmn;3 %</p></td>
+                     <td><p>1 sec</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Noise level (sound pressure)</p></td>
+                     <td><p>38 &ndash; 105 dB</p></td>
+                     <td><p>&plusmn;2 dB (&plusmn;3 dB int v.4.8)</p></td>
+                     <td><p>5 sec</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Illumination</p></td>
+                     <td><p>0,02 &ndash; 100 000 lx</p></td>
+                     <td><p>&plusmn;10 %</p></td>
+                     <td><p>1 sec</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Air quality - VOC</p>
+                        <p>(volatile organic compounds)</p></td>
+                     <td><p>0 ppm &ndash; 60000 ppb (parts per million) for ethanol</p></td>
+                     <td><p>&plusmn;15 % (typical)</p>
+                        <p>&plusmn;40 % (max)</p></td>
+                     <td><p>5 min</p>
+                        <p>(self-calibration after 12 hours)</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Motion sensor</p></td>
+                     <td><p>Up to 8 m, 120 degree</p></td>
+                     <td><p>&nbsp;</p></td>
+                     <td><p>8 sec</p></td>
+                  </tr>
+                  <tr>
+                     <td><p>Transmitting IR commands</p></td>
+                     <td><p>Up to 10 m (depends on the surrounding conditions)</p></td>
+                     <td><p>&nbsp;</p></td>
+                     <td><p>1 sec</p></td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <h1 id="WhatIsZ-Wave">What is Z-Wave™ and Long Range?</h1>
+            <p>The Z-Wave protocol is an open, interoperable, sub-GHz wireless communications technology designed specifically for control, monitoring and status reading applications in residential and light commercial environments. Z-Wave has two operating modes Z-Wave MESH which is a very reliable sub-GHz MESH and Long Range (US only) which operates in a STAR topology offering over a mile range.</p>
+            <p>This product can be operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers.</p>
+            <p><b>Note:</b> To add in Z-Wave Long Range mode, you can only use Smart Start.</p>
+
+            <h1 id="Connection">Connection</h1>
+            <p>The terminal block "V+ GND A B" with a 3.5 mm pitch is used to connect power and the RS-485 bus.</p>
+            <p>Power supply characteristics:</p>
+            <ul>
+               <li>Voltage: 9 V – 28 V DC</li>
+               <li>Power: 4W</li>
+            </ul>
+            <center><img src="pics/Installation_WB-MSW3.png" width="30%"></center>
+
+            <h1 id="WallMounting">Wall mounting</h1>
+            <p>For mounting with the possibility of easy removal use screws with a head diameter of about 7 mm, for permanent fixation use 9-10 mm.</p>
+            <p>The device must be operated under recommended environmental conditions.</p>
+            <p>We recommend placing the multisensors on warm (internal) walls, at a height of 1-1.6 m from the floor level, taking into account possible drafts and sun exposure.</p>
+            <p>When mounted on the ceiling in a living room, the temperature will be higher than in the room, and the humidity will be lower than in the room. The concentration of CO2 does not depend on the height.</p>
+            <p>If the sensor is mounted on an external wall, then in the cold season the temperature sensor value will be several degrees lower than in the room.</p>
+            <p>After installing the multisensor, the CO2 sensor will be automatically calibrated in the new environment. Full calibration takes 7 days.</p>
+
+            <h1 id="IncludeExclude">Z-Wave Include (Add) / Exclude (Remove) process</h1>
+            <h3 id="AddingByZ-WaveButton">Adding by Z-Wave button press</h3>
+            <p>1. Remove the top cover</p>
+            <table style="width:100%">
+               <tbody>
+                  <tr>
+                     <th><img src="pics/WB-MSW3-OPEN_1.png" width="100%"></th>
+                     <th><img src="pics/WB-MSW3-OPEN_2.png" width="100%"></th>
+                     <th><img src="pics/WB-MSW3-OPEN_3.png" width="100%"></th>
+                  </tr>
+                  <tr>
+                     <td>Locate the latch tab on the underside of the case</td>
+                     <td>Press the latch until the ends with a screwdriver perpendicular to the side of the case</td>
+                     <td>Lift the top cover</td>
+                  </tr>
+               </tbody>
+            </table>
+            <p>2. Z-Wave include button is located on the board. Switch the controller to the "Inclusion" mode and press the button 3 times.</p>
+            <p>To exclude multisensor, switch the Z-Wave controller to the "Exclusion" mode and press Z-Wave button 3 times.</p>
+            <center><img src="pics/IMG_2652_info.jpg" width="60%"></center>
+            <h3 id="AddingUsingSmartStart">Adding using SmartStart</h3>
+            <p>Wall-mounted Multisensor is a Smart Start enabled product. It can be added into a Z-Wave network by scanning the Z-Wave QR Code placed on the back cover.</p>
+            <center><img src="pics/MSW-back-cover.png" width="30%"></center>
+            <ol>
+               <li>To use Smart Start your controller needs to support Security S2</li>
+               <li>On the add device page scan the Smart Start QR-code or enter the full DSK string</li>
+               <li>Power the multisensor</li>
+               <li>Wait for the adding process to start (up to few minutes)</li>
+            </ol>
+
+            <h1 id="CommunicationInterfaces">RS-485 or Z-Wave communication interfaces</h1>
+            <p>Mode Switch is needed to select the communication interface.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>ON</td>
+                     <td>Z-Wave (by default)</td>
+                  </tr>
+                  <tr>
+                     <td>OFF</td>
+                     <td>RS-485 <a href="https://wirenboard.com/wiki/WB-MSWv_3_registers/en">Register Map</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <h1 id="Using">Usage in Z-Wave network</h1>
+            <p>Thanks to the many built-in sensors, the device can be used in different scenarios.</p>
+            <h3 id="MotionSensor">Motion sensor</h3>
+            <p>Motion sensor can be used to control lighting and in security cases. Add the lighting device (bulb, led strip, relay, dimmer) to the association group 2 so that the sensor can control it. Parameters 64 - 67 are responsible for sending control commands when the motion sensor is triggered.</p>
+            <h3 id="TemperatureSensor">Temperature sensor</h3>
+            <p>Temperature sensor can be used in a climate control scenario. In association group 3 add the wall plug that controls the heater. Parameters 68 - 73 allow you to adjust the temperature of turning on and off the heater.</p>
+            <h3 id="HumiditySensor">Humidity sensor</h3>
+            <p>Humidity sensor together with the temperature sensor can control the microclimate in the room. Add a humidifier to the association group 4. Parameters 74 - 79 allow you to adjust the humidity level of turning on and off the humidifier.</p>
+            <h3 id="LuminanceSensor">Luminance sensor</h3>
+            <p>Luminance sensor together with the motion sensor can control lighting more intelligently. In association group 5 add a device that should turn on or off when the luminance level is exceeded. Parameters 80 - 85 allow you to control devices when the luminance level changes. Example scenario: Even if the motion sensor is triggered, but the natural luminance level is high, then the light can not be turned on.</p>
+            <h3 id="CO2AndVOCSensors">CO2 and VOC sensors</h3>
+            <p>CO2 and VOC sensors are designed for indoor air quality monitoring. If the values are exceeded, open the window or turn on the ventilation. In association groups 6 and 7 add a ventilation control device or a siren to alert about airing. Parameters 86 - 91 allow you to adjust the CO2 level to enable ventilation, parameters 92 - 97 allow you to adjust the VOC level to enable ventilation.</p>
+            <h3 id="CO2AutoCalibration">Auto-calibration of the CO2 sensor</h3>
+            <p>Auto-calibration of the CO2 sensor. The measured minimum value for 7 days is taken as 400 ppm — this is the value of the CO2 concentration on the street. The CO2 concentration will drop to street level if there are no people in the room for at least a few hours a day, or if exhaust ventilation is working in the room, or windows are sometimes opened in the room.</p>
+            <h3 id="SafeLevelsOfCO2">Safe levels of CO2</h3>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>250 - 400 ppm</td>
+                     <td>Normal background concentration in outdoor ambient air</td>
+                  </tr>
+                  <tr>
+                     <td>400 - 1000 ppm</td>
+                     <td>Concentrations typical of occupied indoor spaces with good air exchange</td>
+                  </tr>
+                  <tr>
+                     <td>1000 - 2000 ppm</td>
+                     <td>Complaints of drowsiness and poor air.</td>
+                  </tr>
+                  <tr>
+                     <td>2000 - 5000 ppm</td>
+                     <td>Headaches, sleepiness and stagnant, stale, stuffy air. Poor concentration, loss of attention, increased heart rate and slight nausea may also be present.</td>
+                  </tr>
+                  <tr>
+                     <td>5000 ppm</td>
+                     <td>Workplace exposure limit (as 8-hour TWA) in most jurisdictions.</td>
+                  </tr>
+                  <tr>
+                     <td>>40000 ppm</td>
+                     <td>Exposure may lead to serious oxygen deprivation resulting in permanent brain damage, coma, even death.</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h3 id="NoiseSensor">Noise sensor</h3>
+            <p>Noise sensor measures the noise level in dB, can be used in public areas to monitor people's activity. In association group 8 add a device that should turn on or off when the noise level is exceeded. Parameters 98 - 103 allow you to control devices when the luminance level changes.</p>
+            <h3 id="IntrusionDetection">Intrusion detection</h3>
+            <p>Intrusion detection is provided by a noise sensor. By default, if the noise level is above 80 dB, a alarm is sent to the controller. You can adjust the noise level in parameters 104, 105. Also the intrusion alarm can be used to turn on the light by clap :).</p>
+            <h3 id="Hysteresis">Hysteresis</h3>
+            <p>When controlling the heating, temperature hysteresis is defined by a minimum and maximum temperature value, where the heat will be turned on and off respectively. For example, If the room temperature is to be maintained at 21°C with a hysteresis of 2°C, the heater will turn on when the temperature drops to 19°C and turn off when the temperature reaches 23°C.</p>
+            <center><img src="pics/Figure1.png" width="60%"></center>
+
+            <h1 id="Associations">Associations</h1>
+            <p>Association - Direct control of other Z-Wave devices in case of exceeding the threshold of one of the sensors. Up to 5 devices can be placed in each of the 8 groups.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <th>Group #</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>1</td>
+                     <td>Lifeline - reports on all sensor values to the controller</td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>Motion Basic On/Off - control devices when the motion sensor is triggered</td>
+                  </tr>
+                  <tr>
+                     <td>3</td>
+                     <td>Temperature Basic On/Off - control devices when the temperature changes (thermostat function)</td>
+                  </tr>
+                  <tr>
+                     <td>4</td>
+                     <td>Humidity Basic On/Off - control devices when humidity changes (hygrometer function)</td>
+                  </tr>
+                  <tr>
+                     <td>5</td>
+                     <td>Lumen Basic On/Off - control devices when the luminosity changes</td>
+                  </tr>
+                  <tr>
+                     <td>6</td>
+                     <td>CO2 Basic On/Off - control devices when the CO2 changes</td>
+                  </tr>
+                  <tr>
+                     <td>7</td>
+                     <td>VOC Basic On/Off - control devices when the VOC changes</td>
+                  </tr>
+                  <tr>
+                     <td>8</td>
+                     <td>Noise level Basic On/Off - control devices when the noise changes</td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <h1 id="Configurations">Configuration Parameters</h1>
+            <p>Configuration parameters are used to configure the device for individual needs.</p>
+            <h4>1. Debug mode</h4>
+            <p>Enables Z-Uno debug mode.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 1</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>1 byte</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>2. Activity LED</h4>
+            <p>Turns on/off activity led.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 1</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>1 byte</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>8. RF logging</h4>
+            <p>Turns on/off exception logging.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 1</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>1 byte</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>9. Radio frequency</h4>
+            <p>Changes Z-Wave region</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>255 - 4590</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255 (EU)</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>2 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>11. Multilevel report interval</h4>
+            <p>Minimal report interval in seconds. Debugging mode is required.</p>
+            <p>Even if the temperature changes once per second, the report will come no more than once every 30 seconds (by default). This is protection from radio flood.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>30</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>1 byte</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>20. OTA confirmation</h4>
+            <p>Accepts firmware update process. Set 1 to accept.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 1</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>64. Delay before cancellation of the motion alarm</h4>
+            <p>The period of time after which the motion alarm will be canceled in the controller and association group 2. If a motion triggered during this time period, the timer starts again. Value in seconds.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 100000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>60</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>65. Motion ON command</h4>
+            <p>Send Basic Set ON command to the association group 2.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>66. Motion OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 2.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>67. Motion ON/OFF commands rules</h4>
+            <p>1 - Send ON if the motion is detected. Send OFF if the motion is idle.</p>
+            <p>2 - Send ON if the motion is detected. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the motion is idle.</p>
+            <p>Сommands are sent to the Group 2.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>68. Temperature Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the temperature has changed after the last report by the specified value. Value in 0.01C° (100 = 1C°).</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 4000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>100 (1 C°)</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>69. Temperature Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 3 if the temperature has crossed the level up or down + hysteresis. Value in 0.01C° (100 = 1C°).</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>-4000 — 8000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>4000 (40 C°)</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>70. Temperature Hysteresis to send Basic Set</h4>
+            <p>The range around a Temperature Level within which no commands are sent to the association group 3. Value in 0.01C° (100 = 1C°).</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>10 — 2000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>100 (0.5 C°)</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>71. Temperature ON command</h4>
+            <p>Send Basic Set ON command to the association group 3.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>72. Temperature OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 3.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>73. Temperature ON/OFF commands rules</h4>
+            <p>1 - Send ON if the temperature is greater than Level. Send OFF if the temperature is less than Level.</p>
+            <p>2 - Send ON if the temperature is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the temperature is less than Level.</p>
+            <p>Сommands are sent to the Group 3.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>74. Humidity Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the humidity has changed after the last report by the specified value. Value in %.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 90</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>5</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>75. Humidity Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 4 if the humidity has crossed the level up or down + hysteresis. Value in %.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>5 - 95</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>50</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>76. Humidity Hysteresis to send Basic Set</h4>
+            <p>The range around a Humidity Level within which no commands are sent to the association group 4. Value in %.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 50</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>77. Humidity ON command</h4>
+            <p>Send Basic Set ON command to the association group 4.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>78. Humidity OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 4.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>79. Humidity ON/OFF commands rules</h4>
+            <p>1 - Send ON if the humidity is greater than Level. Send OFF if the humidity is less than Level.</p>
+            <p>2 - Send ON if the humidity is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the humidity is less than Level.</p>
+            <p>Сommands are sent to the Group 4.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>80. Luminance Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the luminance has changed after the last report by the specified value. Value in lux.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 100000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>100</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>81. Luminance Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 5 if the luminance has crossed the level up or down + hysteresis. Value in lux.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 100000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>200</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>82. Luminance Hysteresis to send Basic Set</h4>
+            <p>The range around a Luminance Level within which no commands are sent to the association group 5. Value in lux.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 50000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>50</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>83. Luminance ON command</h4>
+            <p>Send Basic Set ON command to the association group 5.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>84. Luminance OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 5.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>85. Luminance ON/OFF commands rules</h4>
+            <p>1 - Send ON if the luminance is greater than Level. Send OFF if the luminance is less than Level.</p>
+            <p>2 - Send ON if the luminance is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the luminance is less than Level.</p>
+            <p>Сommands are sent to the Group 5.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>86. CO2 Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the CO2 has changed after the last report by the specified value. Value in ppm.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 5000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>100</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>87. CO2 Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 6 if the CO2 has crossed the level up or down + hysteresis. Value in ppm.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>400 - 5000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1500</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>88. CO2 Hysteresis to send Basic Set</h4>
+            <p>The range around a CO2 Level within which no commands are sent to the association group 6. Value in ppm.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 2500</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>50</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>89. CO2 ON command</h4>
+            <p>Send Basic Set ON command to the association group 6.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>90. CO2 OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 6. </p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>91. CO2 ON/OFF commands rules</h4>
+            <p>1 - Send ON if the CO2 is greater than Level. Send OFF if the CO2 is less than Level.</p>
+            <p>2 - Send ON if the CO2 is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the CO2 is less than Level.</p>
+            <p>Сommands are sent to the Group 6.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>92. VOC Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the VOC has changed after the last report by the specified value. Value in ppb.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 60000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>200</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>93. VOC Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 7 if the VOC has crossed the level up or down + hysteresis. Value in ppb.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 60000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>660</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>94. VOC Hysteresis to send Basic Set</h4>
+            <p>The range around a VOC Level within which no commands are sent to the association group 7. Value in ppb.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 30000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>200</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>95. VOC ON command</h4>
+            <p>Send Basic Set ON command to the association group 7.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>96. VOC OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 7.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>97. VOC ON/OFF commands rules</h4>
+            <p>1 - Send ON if the VOC is greater than Level. Send OFF if the VOC is less than Level.</p>
+            <p>2 - Send ON if the VOC is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the VOC is less than Level.</p>
+            <p>Сommands are sent to the Group 7.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>98. Noise Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the noise has changed after the last report by the specified value. Value in dB.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 105</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>10</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>99. Noise Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 8 if the noise has crossed the level up or down + hysteresis. Value in dB.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>38 - 105</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>80</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>100. Noise Hysteresis to send Basic Set</h4>
+            <p>The range around a Noise Level within which no commands are sent to the association group 8. Value in dB.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 50</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>5</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>101. Noise ON command</h4>
+            <p>Send Basic Set ON command to the association group 8.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>255</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>102. Noise OFF command</h4>
+            <p>Send Basic Set OFF command to the association group 8.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 255</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>0</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>103. Noise ON/OFF commands rules</h4>
+            <p>1 - Send ON if the noise is greater than Level. Send OFF if the noise is less than Level.</p>
+            <p>2 - Send ON if the noise is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the noise is less than Level.</p>
+            <p>Сommands are sent to the Group 8.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>1 - 3</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>104. Intrusion Noise Level</h4>
+            <p>Send Alarm report to the controller if the noise level more then the specified value. Value in dB.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>38 - 105</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>80</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h4>105. Delay before cancellation of the intrusion alarm</h4>
+            <p>The period of time after which the intrusion alarm will be canceled in the controller. If the Noise Level becomes higher than the specified value during this time period, the timer starts again. Value in seconds.</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Value</td>
+                     <td>0 - 100000</td>
+                  </tr>
+                  <tr>
+                     <td>Default</td>
+                     <td>5</td>
+                  </tr>
+                  <tr>
+                     <td>Size</td>
+                     <td>4 bytes</td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <h1 id="FactoryReset">Factory Reset</h1>
+            <p>Hold the Z-Wave button until the red LED is blinking, release the Z-Wave button and then triple click on it. The red LED will confirm the reset process. Use this procedure only if your controller is missing or inoperable.</p>
+
+            <h1 id="LEDs">LEDs</h1>
+            <p>Red blink: motion sensor triggered</p>
+            <p>You can control built-in LEDs (red, green, orange) using the Indicator Command Class, it can be used to identify specific node in network.</p>
+
+            <h1 id="BuzzerControl">Buzzer control</h1>
+            <p>You can control the built-in buzzer using the Sound Switch Command Class. Available 2 audio alerts.</p>
+            <ol>
+               <li>constant beep</li>
+               <li>intermittent beep</li>
+            </ol>
+
+            <h1 id="NotificationCC">Notification Command Class</h1>
+            <p>Version: 8</p>
+            <p>Notification Type: Home Security (0x07)</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <th>Channel</th>
+                     <th>Event / State</th>
+                     <th>State variable</th>
+                     <th>State var. after [State idle] Notification</th>
+                     <th>Notification name</th>
+                     <th>Value</th>
+                  </tr>
+                  <tr>
+                     <td>0,1</td>
+                     <td>State</td>
+                     <td>Motion sensor status</td>
+                     <td>Idle</td>
+                     <td>Motion detection</td>
+                     <td>8</td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>State</td>
+                     <td>Sensor status</td>
+                     <td>Idle</td>
+                     <td>Intrusion</td>
+                     <td>2</td>
+                  </tr>
+               </tbody>
+            </table>
+            <h1 id="SensorMultilevelCC">Sensor Multilevel Command Class</h1>
+            <p>Version: 11</p>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <th>Channel</th>
+                     <th>Sensor Type</th>
+                     <th>Scale</th>
+                     <th>Precision</th>
+                     <th>Size</th>
+                  </tr>
+                  <tr>
+                     <td>3</td>
+                     <td>Temperature</td>
+                     <td>°C</td>
+                     <td>2</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>4</td>
+                     <td>Humidity</td>
+                     <td>%</td>
+                     <td>2</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>5</td>
+                     <td>Luminiscence</td>
+                     <td>Lux</td>
+                     <td>2</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>6</td>
+                     <td>CO₂ Level</td>
+                     <td>PPM</td>
+                     <td>0</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>7</td>
+                     <td>Volatile Organic Compound (VOC)</td>
+                     <td>mol/m³</td>
+                     <td>0</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>8</td>
+                     <td>Loudness</td>
+                     <td>Absolute loudness (dB)</td>
+                     <td>2</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <h1 id="SecurityCC">Security</h1>
+            <p>Multisensor supports 4 Z-Wave security levels</p>
+            <ol>
+               <li>Non-secure</li>
+               <li>S0</li>
+               <li>S2-Unauthenticated</li>
+               <li>S2-Authenticated</li>
+            </ol>
+            <h1 id="TechnicalSpecifications">Technical specifications</h1>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <td>Voltage</td>
+                     <td>9 V – 28 V DC</td>
+                  </tr>
+                  <tr>
+                     <td>Power</td>
+                     <td>4W</td>
+                  </tr>
+                  <tr>
+                     <td>Operating temperature</td>
+                     <td>-10°C … +50°C</td>
+                  </tr>
+                  <tr>
+                     <td>Operating humidity</td>
+                     <td>Up to 95%, without condensation of moisture</td>
+                  </tr>
+                  <tr>
+                     <td>Dimensions</td>
+                     <td>83x83x21 mm</td>
+                  </tr>
+                  <tr>
+                     <td>Weight</td>
+                     <td>90 g (with box)</td>
+                  </tr>
+                  <tr>
+                     <td>Communication interfaces</td>
+                     <td>
+                        <p>Z-Wave Plus (wireless)</p>
+                        <p>RS-485 (wired)</p></td>
+                  </tr>
+                  <tr>
+                     <td>Z-Wave frequency</td>
+                     <td>
+                        <p>(865...869 MHz): Europe (EU) [default], India (IN), Russia (RU), China (CN), South Africa (EU), Middle East (EU)</p> 
+                        <p>(908...917 MHz): America, excluding Brazil and Peru (US) [default], Israel (IL)</p> 
+                        <p>(919...921 MHz): Australia / New Zealand / Brazil / Peru (ANZ), Hong Kong (HK), Japan (JP), Taiwan (TW), Korea (KR)</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+
+         </div>
+      </div>
+   </body>
+</html>
