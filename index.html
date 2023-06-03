@@ -52,7 +52,9 @@
                <li><a href="#BuzzerControl">Buzzer control</a></li>
                <li><a href="#NotificationCC">Notification Command Class</a></li>
                <li><a href="#SensorMultilevelCC">Sensor Multilevel Command Class</a></li>
+               <li><a href="#BasicCC">Basic Command Class</a></li>
                <li><a href="#SecurityCC">Security</a></li>
+               <li><a href="#CommandClassesVersions">Command Classes Versions</a></li>
                <li><a href="#TechnicalSpecifications">Technical specifications</a></li>
             </ul>
          </nav>
@@ -1251,53 +1253,147 @@
                      <td>Temperature</td>
                      <td>°C</td>
                      <td>2</td>
-                     <td></td>
+                     <td>2</td>
                   </tr>
                   <tr>
                      <td>4</td>
                      <td>Humidity</td>
                      <td>%</td>
                      <td>2</td>
-                     <td></td>
+                     <td>2</td>
                   </tr>
                   <tr>
                      <td>5</td>
                      <td>Luminiscence</td>
                      <td>Lux</td>
                      <td>2</td>
-                     <td></td>
+                     <td>4</td>
                   </tr>
                   <tr>
                      <td>6</td>
                      <td>CO₂ Level</td>
                      <td>PPM</td>
                      <td>0</td>
-                     <td></td>
+                     <td>2</td>
                   </tr>
                   <tr>
                      <td>7</td>
                      <td>Volatile Organic Compound (VOC)</td>
                      <td>mol/m³</td>
                      <td>0</td>
-                     <td></td>
+                     <td>2</td>
                   </tr>
                   <tr>
                      <td>8</td>
                      <td>Loudness</td>
                      <td>Absolute loudness (dB)</td>
                      <td>2</td>
-                     <td></td>
+                     <td>2</td>
                   </tr>
                </tbody>
             </table>
             <h1 id="SecurityCC">Security</h1>
-            <p>Multisensor supports 4 Z-Wave security levels</p>
+            <p>Version: 1</p>
+            <p>Multisensor supports four Z-Wave security levels</p>
             <ol>
                <li>Non-secure</li>
                <li>S0</li>
-               <li>S2-Unauthenticated</li>
-               <li>S2-Authenticated</li>
+               <li>S2 Unauthenticated</li>
+               <li>S2 Authenticated</li>
             </ol>
+            The security level required to communicate with each Association target is detected automatically. Highest possible supported level will be used for each target.
+            <h2 id="BasicCC">Basic Command</h1>
+            <p>Version: 1</p>
+            Basic Set command is mapped on the Sound Switch Set command.
+            <h2 id="CommandClassesVersions">Command Classes Versions</h1>
+            <table class="wikitable">
+               <tbody>
+                  <tr>
+                     <th>Command Class</th>
+                     <th>Version</th>
+                  </tr>
+                  <tr>
+                     <td>Association</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Association Group Information</td>
+                     <td>3</td>
+                  </tr>
+                  <tr>
+                     <td>Basic</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Configuration</td>
+                     <td>4</td>
+                  </tr>
+                  <tr>
+                     <td>Device Reset Locally</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Firmware Update</td>
+                     <td>5</td>
+                  </tr>
+                  <tr>
+                     <td>Indicator</td>
+                     <td>4</td>
+                  </tr>
+                  <tr>
+                     <td>Manufacturer Specific</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Multi Channel</td>
+                     <td>4</td>
+                  </tr>
+                  <tr>
+                     <td>Multi Channel Association</td>
+                     <td>3</td>
+                  </tr>
+                  <tr>
+                     <td>Multilevel Sensor</td>
+                     <td>11</td>
+                  </tr>
+                  <tr>
+                     <td>Notification</td>
+                     <td>8</td>
+                  </tr>
+                  <tr>
+                     <td>Power Level</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Security S0</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Security S2</td>
+                     <td>1</td>
+                  </tr>
+                  <tr>
+                     <td>Sound Switch</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Supervision</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Transport Service</td>
+                     <td>2</td>
+                  </tr>
+                  <tr>
+                     <td>Version</td>
+                     <td>3</td>
+                  </tr>
+                  <tr>
+                     <td>Z-Wave Plus Information</td>
+                     <td>2</td>
+                  </tr>
+               </tbody>
+            </table>
             <h1 id="TechnicalSpecifications">Technical specifications</h1>
             <table class="wikitable">
                <tbody>
@@ -1334,8 +1430,8 @@
                   <tr>
                      <td>Z-Wave frequency</td>
                      <td>
-                        <p>(865...869 MHz): Europe (EU) [default], India (IN), Russia (RU), China (CN), South Africa (EU), Middle East (EU)</p> 
-                        <p>(908...917 MHz): America, excluding Brazil and Peru (US) [default], Israel (IL)</p> 
+                        <p>(865...869 MHz): Europe (EU), India (IN), Russia (RU), China (CN), South Africa (EU), Middle East (EU)</p> 
+                        <p>(908...917 MHz): America, excluding Brazil and Peru (US), Israel (IL)</p> 
                         <p>(919...921 MHz): Australia / New Zealand / Brazil / Peru (ANZ), Hong Kong (HK), Japan (JP), Taiwan (TW), Korea (KR)</p>
                      </td>
                   </tr>
