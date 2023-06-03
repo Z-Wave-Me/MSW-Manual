@@ -37,9 +37,9 @@
                      <li><a href="#TemperatureSensor">Temperature sensor</a></li>
                      <li><a href="#HumiditySensor">Humidity sensor</a></li>
                      <li><a href="#LuminanceSensor">Luminance sensor</a></li>
-                     <li><a href="#CO2AndVOCSensors">CO2 and VOC sensors</a></li>
-                     <li><a href="#CO2AutoCalibration">Auto-calibration of the CO2 sensor</a></li>
-                     <li><a href="#SafeLevelsOfCO2">Safe levels of CO2</a></li>
+                     <li><a href="#CO2AndVOCSensors">CO₂ and VOC sensors</a></li>
+                     <li><a href="#CO2AutoCalibration">Auto-calibration of the CO₂ sensor</a></li>
+                     <li><a href="#SafeLevelsOfCO2">Safe levels of CO₂</a></li>
                      <li><a href="#NoiseSensor">Noise sensor</a></li>
                      <li><a href="#IntrusionDetection">Intrusion detection</a></li>
                      <li><a href="#Hysteresis">Hysteresis</a></li>
@@ -77,7 +77,7 @@
             <p>WB-MSW-ZWAVE</p>
             <p>Version 1.0</p>
             <center><img src="pics/WB-MSW3-front.JPG" width="30%"></center>
-            <p>Z-Wave.Me Wall-mounted Multisensor it’s a Z-Wave Plus™ and RS-485 operating multisensor that contains temperature, humidity, light, motion, noise level, CO2 concentration and volatile organic compounds (VOC) sensors. Built-in IR transceiver is designed to control the TV/AV and air conditioning.</p>
+            <p>Z-Wave.Me Wall-mounted Multisensor it’s a Z-Wave Plus™ and RS-485 operating multisensor that contains temperature, humidity, light, motion, noise level, CO₂ concentration and volatile organic compounds (VOC) sensors. Built-in IR transceiver is designed to control the TV/AV and air conditioning.</p>
             <p>The multisensor case is made of plastic and is not waterproof, designed for use in homes and offices. For wall mounting.</p>
             <p>Supports operation via the Z-Wave radio protocol or via the two-wire RS-485 bus with Modbus RTU commands.</p>
             <table class="wikitable">
@@ -161,9 +161,9 @@
             <p>For mounting with the possibility of easy removal use screws with a head diameter of about 7 mm, for permanent fixation use 9-10 mm.</p>
             <p>The device must be operated under recommended environmental conditions.</p>
             <p>We recommend placing the multisensors on warm (internal) walls, at a height of 1-1.6 m from the floor level, taking into account possible drafts and sun exposure.</p>
-            <p>When mounted on the ceiling in a living room, the temperature will be higher than in the room, and the humidity will be lower than in the room. The concentration of CO2 does not depend on the height.</p>
+            <p>When mounted on the ceiling in a living room, the temperature will be higher than in the room, and the humidity will be lower than in the room. The concentration of CO₂ does not depend on the height.</p>
             <p>If the sensor is mounted on an external wall, then in the cold season the temperature sensor value will be several degrees lower than in the room.</p>
-            <p>After installing the multisensor, the CO2 sensor will be automatically calibrated in the new environment. Full calibration takes 7 days.</p>
+            <p>After installing the multisensor, the CO₂ sensor will be automatically calibrated in the new environment. Full calibration takes 7 days.</p>
 
             <h1 id="IncludeExclude">Z-Wave Include (Add) / Exclude (Remove) process</h1>
             <h3 id="AddingByZ-WaveButton">Adding by Z-Wave button press</h3>
@@ -219,11 +219,11 @@
             <p>Humidity sensor together with the temperature sensor can control the microclimate in the room. Add a humidifier to the association group 4. Parameters 74 - 79 allow you to adjust the humidity level of turning on and off the humidifier.</p>
             <h3 id="LuminanceSensor">Luminance sensor</h3>
             <p>Luminance sensor together with the motion sensor can control lighting more intelligently. In association group 5 add a device that should turn on or off when the luminance level is exceeded. Parameters 80 - 85 allow you to control devices when the luminance level changes. Example scenario: Even if the motion sensor is triggered, but the natural luminance level is high, then the light can not be turned on.</p>
-            <h3 id="CO2AndVOCSensors">CO2 and VOC sensors</h3>
-            <p>CO2 and VOC sensors are designed for indoor air quality monitoring. If the values are exceeded, open the window or turn on the ventilation. In association groups 6 and 7 add a ventilation control device or a siren to alert about airing. Parameters 86 - 91 allow you to adjust the CO2 level to enable ventilation, parameters 92 - 97 allow you to adjust the VOC level to enable ventilation.</p>
-            <h3 id="CO2AutoCalibration">Auto-calibration of the CO2 sensor</h3>
-            <p>Auto-calibration of the CO2 sensor. The measured minimum value for 7 days is taken as 400 ppm — this is the value of the CO2 concentration on the street. The CO2 concentration will drop to street level if there are no people in the room for at least a few hours a day, or if exhaust ventilation is working in the room, or windows are sometimes opened in the room.</p>
-            <h3 id="SafeLevelsOfCO2">Safe levels of CO2</h3>
+            <h3 id="CO2AndVOCSensors">CO₂ and VOC sensors</h3>
+            <p>CO₂ and VOC sensors are designed for indoor air quality monitoring. If the values are exceeded, open the window or turn on the ventilation. In association groups 6 and 7 add a ventilation control device or a siren to alert about airing. Parameters 86 - 91 allow you to adjust the CO₂ level to enable ventilation, parameters 92 - 97 allow you to adjust the VOC level to enable ventilation.</p>
+            <h3 id="CO2AutoCalibration">Auto-calibration of the CO₂ sensor</h3>
+            <p>Auto-calibration of the CO₂ sensor. The measured minimum value for 7 days is taken as 400 ppm — this is the value of the CO₂ concentration on the street. The CO₂ concentration will drop to street level if there are no people in the room for at least a few hours a day, or if exhaust ventilation is working in the room, or windows are sometimes opened in the room.</p>
+            <h3 id="SafeLevelsOfCO2">Safe levels of CO₂</h3>
             <table class="wikitable">
                <tbody>
                   <tr>
@@ -290,7 +290,7 @@
                   </tr>
                   <tr>
                      <td>6</td>
-                     <td>CO2 Basic On/Off - control devices when the CO2 changes</td>
+                     <td>CO₂ Basic On/Off - control devices when the CO₂ changes</td>
                   </tr>
                   <tr>
                      <td>7</td>
@@ -822,8 +822,8 @@
                   </tr>
                </tbody>
             </table>
-            <h4>86. CO2 Report Threshold</h4>
-            <p>0 - Reports disabled. Send Report to the controller if the CO2 has changed after the last report by the specified value. Value in ppm.</p>
+            <h4>86. CO₂ Report Threshold</h4>
+            <p>0 - Reports disabled. Send Report to the controller if the CO₂ has changed after the last report by the specified value. Value in ppm.</p>
             <table class="wikitable">
                <tbody>
                   <tr>
@@ -840,8 +840,8 @@
                   </tr>
                </tbody>
             </table>
-            <h4>87. CO2 Level to send Basic Set</h4>
-            <p>Send Basic Set to the association group 6 if the CO2 has crossed the level up or down + hysteresis. Value in ppm.</p>
+            <h4>87. CO₂ Level to send Basic Set</h4>
+            <p>Send Basic Set to the association group 6 if the CO₂ has crossed the level up or down + hysteresis. Value in ppm.</p>
             <table class="wikitable">
                <tbody>
                   <tr>
@@ -858,8 +858,8 @@
                   </tr>
                </tbody>
             </table>
-            <h4>88. CO2 Hysteresis to send Basic Set</h4>
-            <p>The range around a CO2 Level within which no commands are sent to the association group 6. Value in ppm.</p>
+            <h4>88. CO₂ Hysteresis to send Basic Set</h4>
+            <p>The range around a CO₂ Level within which no commands are sent to the association group 6. Value in ppm.</p>
             <table class="wikitable">
                <tbody>
                   <tr>
@@ -876,7 +876,7 @@
                   </tr>
                </tbody>
             </table>
-            <h4>89. CO2 ON command</h4>
+            <h4>89. CO₂ ON command</h4>
             <p>Send Basic Set ON command to the association group 6.</p>
             <table class="wikitable">
                <tbody>
@@ -894,7 +894,7 @@
                   </tr>
                </tbody>
             </table>
-            <h4>90. CO2 OFF command</h4>
+            <h4>90. CO₂ OFF command</h4>
             <p>Send Basic Set OFF command to the association group 6. </p>
             <table class="wikitable">
                <tbody>
@@ -912,10 +912,10 @@
                   </tr>
                </tbody>
             </table>
-            <h4>91. CO2 ON/OFF commands rules</h4>
-            <p>1 - Send ON if the CO2 is greater than Level. Send OFF if the CO2 is less than Level.</p>
-            <p>2 - Send ON if the CO2 is greater than Level. Do not send OFF.</p>
-            <p>3 - Do not send ON. Send OFF if the CO2 is less than Level.</p>
+            <h4>91. CO₂ ON/OFF commands rules</h4>
+            <p>1 - Send ON if the CO₂ is greater than Level. Send OFF if the CO₂ is less than Level.</p>
+            <p>2 - Send ON if the CO₂ is greater than Level. Do not send OFF.</p>
+            <p>3 - Do not send ON. Send OFF if the CO₂ is less than Level.</p>
             <p>Сommands are sent to the Group 6.</p>
             <table class="wikitable">
                <tbody>
