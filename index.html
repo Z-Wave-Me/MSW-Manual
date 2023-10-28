@@ -1234,11 +1234,13 @@
             </table>
 
             <h1 id="FactoryReset">Factory Reset</h1>
-            <p>Hold the Z-Wave button until the red LED is blinking, release the Z-Wave button and then triple click on it. The red LED will confirm the reset process. Use this procedure only if your controller is missing or inoperable.</p>
+            <p>Hold the Z-Wave button for 10 seconds until the red and green LED is blinking, release the Z-Wave button and then triple click on it, the device will be reset. Use this procedure only if your controller is missing or inoperable.</p>
+            <p>Device Reset Locally notification is sent just before leaving the network.</p>
 
             <h1 id="LEDs">LEDs</h1>
-            <p>Red blink: motion sensor triggered</p>
-            <p>You can control built-in LEDs (red, green, orange) using the Indicator Command Class, it can be used to identify specific node in network.</p>
+            <p>Red flashes once - motion detected</p>
+            <p>Red flashes every 5 seconds - the sensor is not added to Z-Wave network. Сan be configured using parameter 106</p>
+            <p>Green flashes every 10 seconds - the sensor works in the Z-Wave network. Сan be configured using parameter 107</p>
 
             <h1 id="BuzzerControl">Buzzer control</h1>
             <p>You can control the built-in buzzer using the Sound Switch Command Class. Available 2 audio alerts.</p>
