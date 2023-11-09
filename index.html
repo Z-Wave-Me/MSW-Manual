@@ -214,880 +214,8 @@
                   </tr>
                </tbody>
             </table>
-            <h3 id="RegisterMap">Modbus Register Map</h3>
-            <table border="1" class="wikitable">
-               <caption>Legend </caption>
-               <tbody>
-                  <tr>
-                     <td>RO / RW</td>
-                     <td>Read only / Read/Write </td>
-                  </tr>
-                  <tr>
-                     <td>Bold</td>
-                     <td>Register default value </td>
-                  </tr>
-                  <tr>
-                     <td>xN</td>
-                     <td>The multiplier by which to multiply the number in the register to get the unit value. <p>Not specified - consider equal to 1 </p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>FW</td>
-                     <td>The firmware version of the device with which the register appeared. Empty - the register has always been. </td>
-                  </tr>
-                  <tr>
-                     <td>Error:</td>
-                     <td>Value on error </td>
-                  </tr>
-                  <tr>
-                     <td class="cell-gray">Cell gray</td>
-                     <td>Service register: purpose, format and content may change in new firmware versions </td>
-                  </tr>
-               </tbody>
-            </table>
-            <table border="1" class="wikitable">
-               <caption>Modbus device registers </caption>
-               <tbody>
-                  <tr>
-                     <th colspan="2">Address</th>
-                     <th colspan="3">Register Options</th>
-                     <th rowspan="2">Description</th>
-                     <th rowspan="2" style="width: 14.3em;">Values</th>
-                     <th rowspan="2" style="width: 4.1em;">FW </th>
-                  </tr>
-                  <tr>
-                     <th>Dec</th>
-                     <th style="width: 4.3em;">Hex</th>
-                     <th style="width: 4.64em;">Type</th>
-                     <th style="width: 3.7em;">Access</th>
-                     <th style="width: 4.1em;">Format </th>
-                  </tr>
-                  <tr>
-                     <td>0 </td>
-                     <td>0x0000 </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Turning on the tweeter (buzzer) </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                     <td rowspan="2">4.0.0 </td>
-                  </tr>
-                  <tr>
-                     <td>one </td>
-                     <td>0x0001 </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Forced calibration of the CO2 sensor to atmospheric CO2 concentration. Turn on after 20 minutes of operation at 400ppm CO2 (MH-Z19B only) </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>2 </td>
-                     <td>0x0002 </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Enabling heating (heater) in the temperature and humidity sensor chip </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                     <td>3.2.0 </td>
-                  </tr>
-                  <tr>
-                     <td>3 </td>
-                     <td>0x0003 </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Enable CO2 sensor (1-on, 0-off) </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                     <td>4.1.0 </td>
-                  </tr>
-                  <tr>
-                     <td>ten </td>
-                     <td>0x000A </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Turning on the red LED </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                     <td rowspan="5">4.0.0 </td>
-                  </tr>
-                  <tr>
-                     <td>eleven </td>
-                     <td>0x000B </td>
-                     <td>Coil </td>
-                     <td>RW </td>
-                     <td>bool </td>
-                     <td>Green LED on </td>
-                     <td>
-                        <b>0</b>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>0 </td>
-                     <td>0x0000 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Temperature </td>
-                     <td>x0.1, °C <br>Error: 0x7FFF </td>
-                  </tr>
-                  <tr>
-                     <td>one </td>
-                     <td>0x0001 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Relative Humidity </td>
-                     <td>x0.1, %RH <br>Error: 0xFFFF </td>
-                  </tr>
-                  <tr>
-                     <td>3 </td>
-                     <td>0x0003 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Noise level multiplied by 100 </td>
-                     <td>x0.01, dB </td>
-                  </tr>
-                  <tr>
-                     <td>four </td>
-                     <td>0x0004 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Temperature </td>
-                     <td>x0.01, °C <br>Error: 0x7FFF </td>
-                     <td>4.2 </td>
-                  </tr>
-                  <tr>
-                     <td>5 </td>
-                     <td>0x0005 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Relative Humidity </td>
-                     <td>x0.01, %RH <br>Error: 0xFFFF </td>
-                     <td>4.2 </td>
-                  </tr>
-                  <tr>
-                     <td>eight </td>
-                     <td>0x0008 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 concentration </td>
-                     <td>ppm, <br>Error: 0xFFFF </td>
-                     <td rowspan="3">4.0.0 </td>
-                  </tr>
-                  <tr>
-                     <td>9 - 10 </td>
-                     <td>0x0009 - 0x000A </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u32 </td>
-                     <td>Illumination (9 - most significant digit, 10 - least significant digit of the illumination value) </td>
-                     <td>x0.01, lx <br>Error: 0xFFFFFFFF </td>
-                  </tr>
-                  <tr>
-                     <td>eleven </td>
-                     <td>0x000B </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Air quality </td>
-                     <td>ppb <br>Error: 0xFFFF </td>
-                  </tr>
-                  <tr>
-                     <td>82 </td>
-                     <td>0x0052 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Availability of CO2 sensor: 0 - not found, 1 - installed. </td>
-                     <td>0 or 1 </td>
-                     <td>4.19.0 </td>
-                  </tr>
-                  <tr>
-                     <td>83 </td>
-                     <td>0x0053 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Type of installed CO2 sensor: 0 - MH-Z19B, 1 - CM1106. </td>
-                     <td>0 or 1 </td>
-                     <td>4.19.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>86 </td>
-                     <td>0x0056 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Current channel of the noise level sensor: 0 - low-level noise channel, 1 - high-level noise channel. </td>
-                     <td>0 or 1 </td>
-                     <td>4.15.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>87 </td>
-                     <td>0x0057 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>HOLD_REG_SPL_HIGHGAIN_RAW_INT </td>
-                     <td>x0.0625 </td>
-                     <td>4.15.0 </td>
-                  </tr>
-                  <tr>
-                     <td>88 </td>
-                     <td>0x0058 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Forced calibration of the CO2 sensor to a given concentration value. To calibrate, record here the current CO2 value measured by another instrument (only for CM1106). </td>
-                     <td>ppm <br>400 - 1500 </td>
-                     <td>3.12, not available in firmware versions prior to 4.19.0 </td>
-                  </tr>
-                  <tr>
-                     <td>89 </td>
-                     <td>0x0059 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Cycle time for CO2 sensor self-calibration (ABC) algorithm (CM1106 only). </td>
-                     <td>days <br>1 - 30, Error: 0xFFFF </td>
-                     <td>3.12, not available in firmware versions prior to 4.19.0 </td>
-                  </tr>
-                  <tr>
-                     <td>91 </td>
-                     <td>0x005B </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Noise Averaging Time </td>
-                     <td>x10, ms <br>
-                        <b>20</b>
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>92 </td>
-                     <td>0x005C </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>s16 </td>
-                     <td>HOLD_REG_SPL_RAW_OFFSET - ADC value shift </td>
-                     <td>x16 </td>
-                     <td>4.9.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>93 </td>
-                     <td>0x005D </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>s16 </td>
-                     <td>HOLD_REG_SPL_OFFSET - correction to noise level value </td>
-                     <td>x0.1, dB </td>
-                     <td>4.9.0 </td>
-                  </tr>
-                  <tr>
-                     <td>95 </td>
-                     <td>0x005F </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor auto-calibration mode (ABC) for atmospheric CO2 level </td>
-                     <td>0 or 1 </td>
-                     <td></td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>96 </td>
-                     <td>0x0060 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>CO2 measurement range (MH-Z19B only) </td>
-                     <td>2000, <b>5000</b>, 10000 </td>
-                     <td>3.5.0 </td>
-                  </tr>
-                  <tr>
-                     <td>97 </td>
-                     <td>0x0061 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Period between flashes of signal LEDs </td>
-                     <td>c <br>0 - 10 </td>
-                     <td>3.13.0 </td>
-                  </tr>
-                  <tr>
-                     <td>98 </td>
-                     <td>0x0062 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>LED Flash Duration </td>
-                     <td>ms <br>0 - 50 </td>
-                     <td>3.13.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>100 </td>
-                     <td>0x0064 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>HOLD_REG_SPL_RAW_INT </td>
-                     <td>x0.0625 </td>
-                     <td rowspan="5">4.0.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>101 </td>
-                     <td>0x0065 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Number of successful readings of the temperature and humidity sensor </td>
-                     <td></td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>102 </td>
-                     <td>0x0066 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Number of temperature and humidity sensor reading errors </td>
-                     <td></td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>106 </td>
-                     <td>0x006A </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>VOC sensor baseline value </td>
-                     <td></td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>107 </td>
-                     <td>0x006B </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Raw VOC Sensor Values </td>
-                     <td>Error: 0xFFFF </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>108 </td>
-                     <td>0x006C </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>VOC sensor version </td>
-                     <td>Error: 0xFFFF </td>
-                     <td>4.2 </td>
-                  </tr>
-                  <tr>
-                     <td>113 </td>
-                     <td>0x0071 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Delay before sending a response packet over RS-485 </td>
-                     <td>ms <br>
-                        <b>8</b>
-                     </td>
-                     <td>4.15.0 </td>
-                  </tr>
-                  <tr>
-                     <td>245 </td>
-                     <td>0x00F5 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>s16 </td>
-                     <td>Self-heating temperature compensation for temperature and humidity sensor (value subtracted from measured temperature). Permissible compensation values ​​from -10 °C to +10 °C. </td>
-                     <td>x0.01, °C </td>
-                     <td>4.2 </td>
-                  </tr>
-                  <tr>
-                     <td>280 </td>
-                     <td>0x0118 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>The maximum value of the motion sensor for the set window time (Max motion) </td>
-                     <td>Error: 0xFFFF </td>
-                     <td rowspan="4">4.0.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>281 </td>
-                     <td>0x0119 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Raw value from motion sensor ADC </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>282 </td>
-                     <td>0x011A </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Width of the time window for calculating the maximum average value of the motion sensor </td>
-                     <td>c <br>1 - 60 ( <b>10</b>) </td>
-                  </tr>
-                  <tr>
-                     <td>283 </td>
-                     <td>0x011B </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>The current average value of movement in arbitrary units (Current motion) </td>
-                     <td>Error: 0xFFFF </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>284 </td>
-                     <td>0x011C </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Raw temperature value (excluding temperature compensation) </td>
-                     <td>x0.01, °C <br>Error: 0x7FFF </td>
-                     <td rowspan="2">4.16.16 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>285 </td>
-                     <td>0x011D </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Raw value of relative humidity (excluding temperature compensation) </td>
-                     <td>x0.01, %RH <br>Error: 0x7FFF </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>286-287 </td>
-                     <td>0x011E - 0x011F </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>s16 </td>
-                     <td>Raw luminance value (9 is the most significant digit, 10 is the least significant digit of the illuminance value) </td>
-                     <td>x0.01, lx <br>Error: 0xFFFF </td>
-                     <td>4.17.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>288 </td>
-                     <td>0x0120 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>s16 </td>
-                     <td>The calibration value of the light sensor, the adjustment is made according to the following formula: illuminance = illuminance * (1 + calib_coeff/2^7)) </td>
-                     <td>val -128..127 </td>
-                     <td>4.17.3 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>340 </td>
-                     <td>0x0154 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor preheating status: 1 - preheating, 0 - preheating completed (only for CM1106). </td>
-                     <td rowspan="7">0 or 1 </td>
-                     <td rowspan="8">4.19.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>341 </td>
-                     <td>0x0155 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor status: 1 - error, 0 - normal operation (only for CM1106). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>342 </td>
-                     <td>0x0156 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor overrange status: 1 - overrange, 0 - normal operation (only for CM1106). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>343 </td>
-                     <td>0x0157 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Status of value out of the lower limit of the measurement range of the CO2 sensor: 1 - the value is less than the measurement range, 0 - normal operation (only for CM1106). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>344 </td>
-                     <td>0x0158 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor calibration status: 1 - not calibrated, 0 - calibrated (CM1106 only). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>345 </td>
-                     <td>0x0159 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor aging status: 1 - light aging, 0 - normal operation (only for CM1106). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>346 </td>
-                     <td>0x015A </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 sensor drift status: 1 - drift, 0 - normal operation (only for CM1106). </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>348 - 352 </td>
-                     <td>0x015C - 0x0160 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Software version of the CO2 sensor (only for CM1106). </td>
-                     <td>Error: 0xFFFF </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>359 </td>
-                     <td>0x0167 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>VOC sensor type </td>
-                     <td>Error: 0xFFFF </td>
-                     <td rowspan="3">4.20.0 </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>360 </td>
-                     <td>0x0168 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Equivalent air quality (VOC) CO2 value (only for VOC version 0x22) </td>
-                     <td>Error: 0xFFFF </td>
-                  </tr>
-                  <tr class="cell gray">
-                     <td>361 </td>
-                     <td>0x0169 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>CO2 baseline for VOC (only for VOC version 0x22) </td>
-                     <td>Error: 0xFFFF </td>
-                  </tr>
-               </tbody>
-            </table>
 
-            <table border="1" class="wikitable">
-               <caption>Connection parameters, firmware version and other service registers</caption>
-               <tbody>
-                  <tr>
-                     <th colspan="2">Address</th>
-                     <th colspan="3">Register Options</th>
-                     <th rowspan="2">Description</th>
-                     <th rowspan="2" style="width: 14.3em;">Values</th>
-                     <th rowspan="2">Note</th>
-                  </tr>
-                  <tr>
-                     <th>Dec</th>
-                     <th style="width: 4.3em;">Hex</th>
-                     <th style="width: 4.64em;">Type</th>
-                     <th style="width: 3.7em;">Access</th>
-                     <th style="width: 4.1em;">Format </th>
-                  </tr>
-                  <tr>
-                     <th colspan="8">
-                        <b>Connection parameters</b>
-                     </th>
-                  </tr>
-                  <tr>
-                     <td>110 </td>
-                     <td>0x006E </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Port speed</td>
-                     <td>x100, Baudrate <br>12 — 1200 bits/s, <br>24 — 2400 bits/s, <br>48 — 4800 bits/s, <br>
-                        <b>96 — 9600 bits/s</b>, <br>192 — 19 200 bits/s, <br>384 — 38 400 bits/s, <br>576 — 57 600 bits/s, <br>1152 — 115 200 Kbits/s
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>111 </td>
-                     <td>0x006F </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Parity</td>
-                     <td>
-                        <b>0 — None</b>, <br>1 — Odd, <br>2 — Even
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>112 </td>
-                     <td>0x0070 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Stop Bits</td>
-                     <td>1, <b>2</b>
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>128 </td>
-                     <td>0x0080 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Modbus address of the device</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <th colspan="8">
-                        <b>Device model and firmware version</b>
-                     </th>
-                  </tr>
-                  <tr>
-                     <td>200-205 </td>
-                     <td>0x00C8 - 0x00CD </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Device model</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>206-219 </td>
-                     <td>0x00CE - 0x00DB </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Device Model Extension</td>
-                     <td>To read the device model, you need to read a range of 20 registers (200 - 219)</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>220-248 </td>
-                     <td>0x00DC - 0x00F8 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Hash of the commit and the name of the branch from where the firmware was assembled (2 characters in case)</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>250-265 </td>
-                     <td>0x00FA - 0x0109 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Firmware version</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>266-269 </td>
-                     <td>0x010A - 0x010D </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u64 </td>
-                     <td>Serial Number Extension</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>270-271 </td>
-                     <td>0x010E - 0x010F </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u32 </td>
-                     <td>Serial number</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>290-301 </td>
-                     <td>0x0122 - 0x012D </td>
-                     <td>Holding </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Firmware signature</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">320 </td>
-                     <td>0x0140 </td>
-                     <td rowspan="4">Input </td>
-                     <td rowspan="4">RO </td>
-                     <td rowspan="3">u16 </td>
-                     <td rowspan="4">Firmware version in numeric format</td>
-                     <td>MAJOR </td>
-                     <td rowspan="4"></td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">321 </td>
-                     <td>0x0141 </td>
-                     <td>MINOR </td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">322 </td>
-                     <td>0x0142 </td>
-                     <td>PATCH </td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">323 </td>
-                     <td>0x0143 </td>
-                     <td>s16 </td>
-                     <td>SUFFIX </td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">324-325 </td>
-                     <td>0x0144 - 0x0145 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u32 </td>
-                     <td>Firmware version in numeric format</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td class="text-right">326-327 </td>
-                     <td>0x0146 - 0x0147 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u32 </td>
-                     <td>Firmware version in Big Endian format</td>
-                     <td></td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <th colspan="8">
-                        <b>Other</b>
-                     </th>
-                  </tr>
-                  <tr>
-                     <td>104­-105 </td>
-                     <td>0x0068 - 0x0069 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u32 </td>
-                     <td>Uptime</td>
-                     <td>seconds</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>120 </td>
-                     <td>0x0078 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Restarting the device without saving the state</td>
-                     <td>any other than 0 restarts the device</td>
-                  </tr>
-                  <tr>
-                     <td>123 </td>
-                     <td>0x007B </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Voltage on the microcontroller</td>
-                     <td>mV</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>129 </td>
-                     <td>0x0081 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Switching to firmware update mode for 2 minutes</td>
-                     <td>any other than 0 puts the device in firmware update mode</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>330-336 </td>
-                     <td>0x014A - 0x0150 </td>
-                     <td>Holding </td>
-                     <td>RO </td>
-                     <td>string </td>
-                     <td>Loader Version</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>113 </td>
-                     <td>0x0071 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Time before sending a response to a modbus request</td>
-                     <td>
-                        <b>0</b> - 254 ms
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>114 </td>
-                     <td>0x0072 </td>
-                     <td>Holding </td>
-                     <td>RW </td>
-                     <td>u16 </td>
-                     <td>Continuous register reading mode with a gap</td>
-                     <td>
-                        <b>0 - Off</b>
-                        <br> 1 - On <br> 2 - On is saved after a reboot
-                     </td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>121 </td>
-                     <td>0x0079 </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Current supply voltage</td>
-                     <td>mV</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>125 </td>
-                     <td>0x007D </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Current supply voltage (without filter)</td>
-                     <td>mV</td>
-                     <td></td>
-                  </tr>
-                  <tr>
-                     <td>124 </td>
-                     <td>0x007C </td>
-                     <td>Input </td>
-                     <td>RO </td>
-                     <td>u16 </td>
-                     <td>Internal temperature of the microcontroller</td>
-                     <td>x0.1, °C</td>
-                     <td></td>
-                  </tr>
-               </tbody>
-            </table>
+            <li><a href="#RegisterMap">Modbus Register Map</a></li>
 
             <h1 id="Using">Usage in Z-Wave network</h1>
             <p>Thanks to the many built-in sensors, the device can be used in different scenarios.</p>
@@ -2403,6 +1531,881 @@
                         <p>(908...917 MHz): America, excluding Brazil and Peru (US), Israel (IL)</p> 
                         <p>(919...921 MHz): Australia / New Zealand / Brazil / Peru (ANZ), Hong Kong (HK), Japan (JP), Taiwan (TW), Korea (KR)</p>
                      </td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <h1 id="RegisterMap">Modbus Register Map</h3>
+            <table border="1" class="wikitable">
+               <caption>Legend </caption>
+               <tbody>
+                  <tr>
+                     <td>RO / RW</td>
+                     <td>Read only / Read/Write </td>
+                  </tr>
+                  <tr>
+                     <td>Bold</td>
+                     <td>Register default value </td>
+                  </tr>
+                  <tr>
+                     <td>xN</td>
+                     <td>The multiplier by which to multiply the number in the register to get the unit value. <p>Not specified - consider equal to 1 </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>FW</td>
+                     <td>The firmware version of the device with which the register appeared. Empty - the register has always been. </td>
+                  </tr>
+                  <tr>
+                     <td>Error:</td>
+                     <td>Value on error </td>
+                  </tr>
+                  <tr>
+                     <td class="cell-gray">Cell gray</td>
+                     <td>Service register: purpose, format and content may change in new firmware versions </td>
+                  </tr>
+               </tbody>
+            </table>
+            <table border="1" class="wikitable">
+               <caption>Modbus device registers </caption>
+               <tbody>
+                  <tr>
+                     <th colspan="2">Address</th>
+                     <th colspan="3">Register Options</th>
+                     <th rowspan="2">Description</th>
+                     <th rowspan="2" style="width: 14.3em;">Values</th>
+                     <th rowspan="2" style="width: 4.1em;">FW </th>
+                  </tr>
+                  <tr>
+                     <th>Dec</th>
+                     <th style="width: 4.3em;">Hex</th>
+                     <th style="width: 4.64em;">Type</th>
+                     <th style="width: 3.7em;">Access</th>
+                     <th style="width: 4.1em;">Format </th>
+                  </tr>
+                  <tr>
+                     <td>0 </td>
+                     <td>0x0000 </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Turning on the tweeter (buzzer) </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                     <td rowspan="2">4.0.0 </td>
+                  </tr>
+                  <tr>
+                     <td>one </td>
+                     <td>0x0001 </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Forced calibration of the CO2 sensor to atmospheric CO2 concentration. Turn on after 20 minutes of operation at 400ppm CO2 (MH-Z19B only) </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>2 </td>
+                     <td>0x0002 </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Enabling heating (heater) in the temperature and humidity sensor chip </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                     <td>3.2.0 </td>
+                  </tr>
+                  <tr>
+                     <td>3 </td>
+                     <td>0x0003 </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Enable CO2 sensor (1-on, 0-off) </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                     <td>4.1.0 </td>
+                  </tr>
+                  <tr>
+                     <td>ten </td>
+                     <td>0x000A </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Turning on the red LED </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                     <td rowspan="5">4.0.0 </td>
+                  </tr>
+                  <tr>
+                     <td>eleven </td>
+                     <td>0x000B </td>
+                     <td>Coil </td>
+                     <td>RW </td>
+                     <td>bool </td>
+                     <td>Green LED on </td>
+                     <td>
+                        <b>0</b>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>0 </td>
+                     <td>0x0000 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Temperature </td>
+                     <td>x0.1, °C <br>Error: 0x7FFF </td>
+                  </tr>
+                  <tr>
+                     <td>one </td>
+                     <td>0x0001 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Relative Humidity </td>
+                     <td>x0.1, %RH <br>Error: 0xFFFF </td>
+                  </tr>
+                  <tr>
+                     <td>3 </td>
+                     <td>0x0003 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Noise level multiplied by 100 </td>
+                     <td>x0.01, dB </td>
+                  </tr>
+                  <tr>
+                     <td>four </td>
+                     <td>0x0004 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Temperature </td>
+                     <td>x0.01, °C <br>Error: 0x7FFF </td>
+                     <td>4.2 </td>
+                  </tr>
+                  <tr>
+                     <td>5 </td>
+                     <td>0x0005 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Relative Humidity </td>
+                     <td>x0.01, %RH <br>Error: 0xFFFF </td>
+                     <td>4.2 </td>
+                  </tr>
+                  <tr>
+                     <td>eight </td>
+                     <td>0x0008 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 concentration </td>
+                     <td>ppm, <br>Error: 0xFFFF </td>
+                     <td rowspan="3">4.0.0 </td>
+                  </tr>
+                  <tr>
+                     <td>9 - 10 </td>
+                     <td>0x0009 - 0x000A </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u32 </td>
+                     <td>Illumination (9 - most significant digit, 10 - least significant digit of the illumination value) </td>
+                     <td>x0.01, lx <br>Error: 0xFFFFFFFF </td>
+                  </tr>
+                  <tr>
+                     <td>eleven </td>
+                     <td>0x000B </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Air quality </td>
+                     <td>ppb <br>Error: 0xFFFF </td>
+                  </tr>
+                  <tr>
+                     <td>82 </td>
+                     <td>0x0052 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Availability of CO2 sensor: 0 - not found, 1 - installed. </td>
+                     <td>0 or 1 </td>
+                     <td>4.19.0 </td>
+                  </tr>
+                  <tr>
+                     <td>83 </td>
+                     <td>0x0053 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Type of installed CO2 sensor: 0 - MH-Z19B, 1 - CM1106. </td>
+                     <td>0 or 1 </td>
+                     <td>4.19.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>86 </td>
+                     <td>0x0056 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Current channel of the noise level sensor: 0 - low-level noise channel, 1 - high-level noise channel. </td>
+                     <td>0 or 1 </td>
+                     <td>4.15.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>87 </td>
+                     <td>0x0057 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>HOLD_REG_SPL_HIGHGAIN_RAW_INT </td>
+                     <td>x0.0625 </td>
+                     <td>4.15.0 </td>
+                  </tr>
+                  <tr>
+                     <td>88 </td>
+                     <td>0x0058 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Forced calibration of the CO2 sensor to a given concentration value. To calibrate, record here the current CO2 value measured by another instrument (only for CM1106). </td>
+                     <td>ppm <br>400 - 1500 </td>
+                     <td>3.12, not available in firmware versions prior to 4.19.0 </td>
+                  </tr>
+                  <tr>
+                     <td>89 </td>
+                     <td>0x0059 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Cycle time for CO2 sensor self-calibration (ABC) algorithm (CM1106 only). </td>
+                     <td>days <br>1 - 30, Error: 0xFFFF </td>
+                     <td>3.12, not available in firmware versions prior to 4.19.0 </td>
+                  </tr>
+                  <tr>
+                     <td>91 </td>
+                     <td>0x005B </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Noise Averaging Time </td>
+                     <td>x10, ms <br>
+                        <b>20</b>
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>92 </td>
+                     <td>0x005C </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>s16 </td>
+                     <td>HOLD_REG_SPL_RAW_OFFSET - ADC value shift </td>
+                     <td>x16 </td>
+                     <td>4.9.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>93 </td>
+                     <td>0x005D </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>s16 </td>
+                     <td>HOLD_REG_SPL_OFFSET - correction to noise level value </td>
+                     <td>x0.1, dB </td>
+                     <td>4.9.0 </td>
+                  </tr>
+                  <tr>
+                     <td>95 </td>
+                     <td>0x005F </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor auto-calibration mode (ABC) for atmospheric CO2 level </td>
+                     <td>0 or 1 </td>
+                     <td></td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>96 </td>
+                     <td>0x0060 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>CO2 measurement range (MH-Z19B only) </td>
+                     <td>2000, <b>5000</b>, 10000 </td>
+                     <td>3.5.0 </td>
+                  </tr>
+                  <tr>
+                     <td>97 </td>
+                     <td>0x0061 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Period between flashes of signal LEDs </td>
+                     <td>c <br>0 - 10 </td>
+                     <td>3.13.0 </td>
+                  </tr>
+                  <tr>
+                     <td>98 </td>
+                     <td>0x0062 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>LED Flash Duration </td>
+                     <td>ms <br>0 - 50 </td>
+                     <td>3.13.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>100 </td>
+                     <td>0x0064 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>HOLD_REG_SPL_RAW_INT </td>
+                     <td>x0.0625 </td>
+                     <td rowspan="5">4.0.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>101 </td>
+                     <td>0x0065 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Number of successful readings of the temperature and humidity sensor </td>
+                     <td></td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>102 </td>
+                     <td>0x0066 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Number of temperature and humidity sensor reading errors </td>
+                     <td></td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>106 </td>
+                     <td>0x006A </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>VOC sensor baseline value </td>
+                     <td></td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>107 </td>
+                     <td>0x006B </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Raw VOC Sensor Values </td>
+                     <td>Error: 0xFFFF </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>108 </td>
+                     <td>0x006C </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>VOC sensor version </td>
+                     <td>Error: 0xFFFF </td>
+                     <td>4.2 </td>
+                  </tr>
+                  <tr>
+                     <td>113 </td>
+                     <td>0x0071 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Delay before sending a response packet over RS-485 </td>
+                     <td>ms <br>
+                        <b>8</b>
+                     </td>
+                     <td>4.15.0 </td>
+                  </tr>
+                  <tr>
+                     <td>245 </td>
+                     <td>0x00F5 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>s16 </td>
+                     <td>Self-heating temperature compensation for temperature and humidity sensor (value subtracted from measured temperature). Permissible compensation values ​​from -10 °C to +10 °C. </td>
+                     <td>x0.01, °C </td>
+                     <td>4.2 </td>
+                  </tr>
+                  <tr>
+                     <td>280 </td>
+                     <td>0x0118 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>The maximum value of the motion sensor for the set window time (Max motion) </td>
+                     <td>Error: 0xFFFF </td>
+                     <td rowspan="4">4.0.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>281 </td>
+                     <td>0x0119 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Raw value from motion sensor ADC </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>282 </td>
+                     <td>0x011A </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Width of the time window for calculating the maximum average value of the motion sensor </td>
+                     <td>c <br>1 - 60 ( <b>10</b>) </td>
+                  </tr>
+                  <tr>
+                     <td>283 </td>
+                     <td>0x011B </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>The current average value of movement in arbitrary units (Current motion) </td>
+                     <td>Error: 0xFFFF </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>284 </td>
+                     <td>0x011C </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Raw temperature value (excluding temperature compensation) </td>
+                     <td>x0.01, °C <br>Error: 0x7FFF </td>
+                     <td rowspan="2">4.16.16 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>285 </td>
+                     <td>0x011D </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Raw value of relative humidity (excluding temperature compensation) </td>
+                     <td>x0.01, %RH <br>Error: 0x7FFF </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>286-287 </td>
+                     <td>0x011E - 0x011F </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>s16 </td>
+                     <td>Raw luminance value (9 is the most significant digit, 10 is the least significant digit of the illuminance value) </td>
+                     <td>x0.01, lx <br>Error: 0xFFFF </td>
+                     <td>4.17.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>288 </td>
+                     <td>0x0120 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>s16 </td>
+                     <td>The calibration value of the light sensor, the adjustment is made according to the following formula: illuminance = illuminance * (1 + calib_coeff/2^7)) </td>
+                     <td>val -128..127 </td>
+                     <td>4.17.3 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>340 </td>
+                     <td>0x0154 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor preheating status: 1 - preheating, 0 - preheating completed (only for CM1106). </td>
+                     <td rowspan="7">0 or 1 </td>
+                     <td rowspan="8">4.19.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>341 </td>
+                     <td>0x0155 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor status: 1 - error, 0 - normal operation (only for CM1106). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>342 </td>
+                     <td>0x0156 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor overrange status: 1 - overrange, 0 - normal operation (only for CM1106). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>343 </td>
+                     <td>0x0157 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Status of value out of the lower limit of the measurement range of the CO2 sensor: 1 - the value is less than the measurement range, 0 - normal operation (only for CM1106). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>344 </td>
+                     <td>0x0158 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor calibration status: 1 - not calibrated, 0 - calibrated (CM1106 only). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>345 </td>
+                     <td>0x0159 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor aging status: 1 - light aging, 0 - normal operation (only for CM1106). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>346 </td>
+                     <td>0x015A </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 sensor drift status: 1 - drift, 0 - normal operation (only for CM1106). </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>348 - 352 </td>
+                     <td>0x015C - 0x0160 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Software version of the CO2 sensor (only for CM1106). </td>
+                     <td>Error: 0xFFFF </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>359 </td>
+                     <td>0x0167 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>VOC sensor type </td>
+                     <td>Error: 0xFFFF </td>
+                     <td rowspan="3">4.20.0 </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>360 </td>
+                     <td>0x0168 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Equivalent air quality (VOC) CO2 value (only for VOC version 0x22) </td>
+                     <td>Error: 0xFFFF </td>
+                  </tr>
+                  <tr class="cell-gray">
+                     <td>361 </td>
+                     <td>0x0169 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>CO2 baseline for VOC (only for VOC version 0x22) </td>
+                     <td>Error: 0xFFFF </td>
+                  </tr>
+               </tbody>
+            </table>
+
+            <table border="1" class="wikitable">
+               <caption>Connection parameters, firmware version and other service registers</caption>
+               <tbody>
+                  <tr>
+                     <th colspan="2">Address</th>
+                     <th colspan="3">Register Options</th>
+                     <th rowspan="2">Description</th>
+                     <th rowspan="2" style="width: 14.3em;">Values</th>
+                     <th rowspan="2">Note</th>
+                  </tr>
+                  <tr>
+                     <th>Dec</th>
+                     <th style="width: 4.3em;">Hex</th>
+                     <th style="width: 4.64em;">Type</th>
+                     <th style="width: 3.7em;">Access</th>
+                     <th style="width: 4.1em;">Format </th>
+                  </tr>
+                  <tr>
+                     <th colspan="8">
+                        <b>Connection parameters</b>
+                     </th>
+                  </tr>
+                  <tr>
+                     <td>110 </td>
+                     <td>0x006E </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Port speed</td>
+                     <td>x100, Baudrate <br>12 — 1200 bits/s, <br>24 — 2400 bits/s, <br>48 — 4800 bits/s, <br>
+                        <b>96 — 9600 bits/s</b>, <br>192 — 19 200 bits/s, <br>384 — 38 400 bits/s, <br>576 — 57 600 bits/s, <br>1152 — 115 200 Kbits/s
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>111 </td>
+                     <td>0x006F </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Parity</td>
+                     <td>
+                        <b>0 — None</b>, <br>1 — Odd, <br>2 — Even
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>112 </td>
+                     <td>0x0070 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Stop Bits</td>
+                     <td>1, <b>2</b>
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>128 </td>
+                     <td>0x0080 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Modbus address of the device</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <th colspan="8">
+                        <b>Device model and firmware version</b>
+                     </th>
+                  </tr>
+                  <tr>
+                     <td>200-205 </td>
+                     <td>0x00C8 - 0x00CD </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Device model</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>206-219 </td>
+                     <td>0x00CE - 0x00DB </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Device Model Extension</td>
+                     <td>To read the device model, you need to read a range of 20 registers (200 - 219)</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>220-248 </td>
+                     <td>0x00DC - 0x00F8 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Hash of the commit and the name of the branch from where the firmware was assembled (2 characters in case)</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>250-265 </td>
+                     <td>0x00FA - 0x0109 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Firmware version</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>266-269 </td>
+                     <td>0x010A - 0x010D </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u64 </td>
+                     <td>Serial Number Extension</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>270-271 </td>
+                     <td>0x010E - 0x010F </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u32 </td>
+                     <td>Serial number</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>290-301 </td>
+                     <td>0x0122 - 0x012D </td>
+                     <td>Holding </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Firmware signature</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">320 </td>
+                     <td>0x0140 </td>
+                     <td rowspan="4">Input </td>
+                     <td rowspan="4">RO </td>
+                     <td rowspan="3">u16 </td>
+                     <td rowspan="4">Firmware version in numeric format</td>
+                     <td>MAJOR </td>
+                     <td rowspan="4"></td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">321 </td>
+                     <td>0x0141 </td>
+                     <td>MINOR </td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">322 </td>
+                     <td>0x0142 </td>
+                     <td>PATCH </td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">323 </td>
+                     <td>0x0143 </td>
+                     <td>s16 </td>
+                     <td>SUFFIX </td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">324-325 </td>
+                     <td>0x0144 - 0x0145 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u32 </td>
+                     <td>Firmware version in numeric format</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td class="text-right">326-327 </td>
+                     <td>0x0146 - 0x0147 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u32 </td>
+                     <td>Firmware version in Big Endian format</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <th colspan="8">
+                        <b>Other</b>
+                     </th>
+                  </tr>
+                  <tr>
+                     <td>104­-105 </td>
+                     <td>0x0068 - 0x0069 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u32 </td>
+                     <td>Uptime</td>
+                     <td>seconds</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>120 </td>
+                     <td>0x0078 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Restarting the device without saving the state</td>
+                     <td>any other than 0 restarts the device</td>
+                  </tr>
+                  <tr>
+                     <td>123 </td>
+                     <td>0x007B </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Voltage on the microcontroller</td>
+                     <td>mV</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>129 </td>
+                     <td>0x0081 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Switching to firmware update mode for 2 minutes</td>
+                     <td>any other than 0 puts the device in firmware update mode</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>330-336 </td>
+                     <td>0x014A - 0x0150 </td>
+                     <td>Holding </td>
+                     <td>RO </td>
+                     <td>string </td>
+                     <td>Loader Version</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>113 </td>
+                     <td>0x0071 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Time before sending a response to a modbus request</td>
+                     <td>
+                        <b>0</b> - 254 ms
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>114 </td>
+                     <td>0x0072 </td>
+                     <td>Holding </td>
+                     <td>RW </td>
+                     <td>u16 </td>
+                     <td>Continuous register reading mode with a gap</td>
+                     <td>
+                        <b>0 - Off</b>
+                        <br> 1 - On <br> 2 - On is saved after a reboot
+                     </td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>121 </td>
+                     <td>0x0079 </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Current supply voltage</td>
+                     <td>mV</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>125 </td>
+                     <td>0x007D </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Current supply voltage (without filter)</td>
+                     <td>mV</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>124 </td>
+                     <td>0x007C </td>
+                     <td>Input </td>
+                     <td>RO </td>
+                     <td>u16 </td>
+                     <td>Internal temperature of the microcontroller</td>
+                     <td>x0.1, °C</td>
+                     <td></td>
                   </tr>
                </tbody>
             </table>
